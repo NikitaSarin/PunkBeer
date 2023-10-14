@@ -6,25 +6,25 @@
 //
 
 import Foundation
-
-
-struct Beer: Codable, Identifiable {
-    let id: Int64
-    let name: String
-    let description: String
-    let imageUrl: String
-    let abv: Double?
-    let ibu: Double?
-}
+import UIKit
 
 protocol Networking {
     func loadBeers() async throws -> [Beer]
 }
 
-final class NetworkService {
+protocol ImageFetching {
+    func fetchImage(url: URL) async throws -> UIImage
+}
 
-    let baseURL = "https://api.punkapi.com/v2/"
-    let session = URLSession.shared
+actor NetworkService {
+
+    enum Error: Swift.Error {
+        case corruptedImage
+    }
+
+    private let baseURL = "https://api.punkapi.com/v2/"
+    private let session = URLSession.shared
+    private var cache = [URL: UIImage]()
 }
 
 extension NetworkService: Networking {
@@ -39,25 +39,28 @@ extension NetworkService: Networking {
     }
 }
 
-struct NetworkMock: Networking {
+extension NetworkService: ImageFetching {
+
+    func fetchImage(url: URL) async throws -> UIImage {
+        if let image = cache[url] {
+            return image
+        }
+        let (data, _) = try await session.data(from: url)
+        guard
+            let image = UIImage(data: data)
+        else { throw Error.corruptedImage }
+        cache[url] = image
+        return image
+    }
+}
+
+struct NetworkMock: Networking, ImageFetching {
+
     func loadBeers() async throws -> [Beer] {
-        [
-            Beer(
-                id: 1,
-                name: "Lager",
-                description: "Descrition kwedjvberwkjqbfkejwqrbgk;jeqwr hgkjerhglejkrwhglkeqrwhglekrwhjg lrekwjgrelkjgre;lgj;rewljkger;lkg;erwlkgr;ewlkg;erlqjg",
-                imageUrl: "",
-                abv: 1,
-                ibu: 1
-            ),
-            Beer(
-                id: 2,
-                name: "Wise",
-                description: "Descrition",
-                imageUrl: "",
-                abv: 1,
-                ibu: 1
-            )
-        ]
+        [.mock, .mock2]
+    }
+
+    func fetchImage(url: URL) async throws -> UIImage {
+        return UIImage(named: "ipa") ?? UIImage()
     }
 }

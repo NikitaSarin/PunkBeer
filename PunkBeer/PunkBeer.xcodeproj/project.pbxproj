@@ -13,6 +13,9 @@
 		B1EAF06E2ADADFF700B79203 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EAF06D2ADADFF700B79203 /* Preview Assets.xcassets */; };
 		B1EAF0752ADAE04F00B79203 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAF0742ADAE04F00B79203 /* NetworkService.swift */; };
 		B1EAF0772ADAE30800B79203 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAF0762ADAE30800B79203 /* ViewModel.swift */; };
+		B1EAF0792ADB22F400B79203 /* BeerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAF0782ADB22F400B79203 /* BeerRow.swift */; };
+		B1EAF07B2ADB230700B79203 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAF07A2ADB230700B79203 /* Beer.swift */; };
+		B1EAF07D2ADB239500B79203 /* LoadableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAF07C2ADB239500B79203 /* LoadableImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		B1EAF06D2ADADFF700B79203 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B1EAF0742ADAE04F00B79203 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		B1EAF0762ADAE30800B79203 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		B1EAF0782ADB22F400B79203 /* BeerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerRow.swift; sourceTree = "<group>"; };
+		B1EAF07A2ADB230700B79203 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		B1EAF07C2ADB239500B79203 /* LoadableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +62,12 @@
 			isa = PBXGroup;
 			children = (
 				B1EAF0662ADADFF600B79203 /* PunkBeerApp.swift */,
+				B1EAF07A2ADB230700B79203 /* Beer.swift */,
 				B1EAF0682ADADFF600B79203 /* ContentView.swift */,
-				B1EAF0742ADAE04F00B79203 /* NetworkService.swift */,
+				B1EAF0782ADB22F400B79203 /* BeerRow.swift */,
 				B1EAF0762ADAE30800B79203 /* ViewModel.swift */,
+				B1EAF0742ADAE04F00B79203 /* NetworkService.swift */,
+				B1EAF07C2ADB239500B79203 /* LoadableImage.swift */,
 				B1EAF06A2ADADFF700B79203 /* Assets.xcassets */,
 				B1EAF06C2ADADFF700B79203 /* Preview Content */,
 			);
@@ -144,7 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1EAF0692ADADFF600B79203 /* ContentView.swift in Sources */,
+				B1EAF07D2ADB239500B79203 /* LoadableImage.swift in Sources */,
+				B1EAF07B2ADB230700B79203 /* Beer.swift in Sources */,
 				B1EAF0752ADAE04F00B79203 /* NetworkService.swift in Sources */,
+				B1EAF0792ADB22F400B79203 /* BeerRow.swift in Sources */,
 				B1EAF0772ADAE30800B79203 /* ViewModel.swift in Sources */,
 				B1EAF0672ADADFF600B79203 /* PunkBeerApp.swift in Sources */,
 			);

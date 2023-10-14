@@ -6,16 +6,16 @@
 //
 
 import Foundation
-import Combine
+import Observation
 import SwiftUI
 
-final class ViewModel: ObservableObject {
+@Observable final class ViewModel: ObservableObject {
 
-    @Published var beers: [Beer]?
+    var beers: [Beer]?
 
-    let service: Networking
+    let service: Networking & ImageFetching
 
-    init(service: Networking) {
+    init(service: Networking & ImageFetching) {
         self.service = service
     }
 
