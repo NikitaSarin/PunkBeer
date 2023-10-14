@@ -37,6 +37,8 @@ struct LoadableImage: View {
                 Color
                     .gray
                     .opacity(0.2)
+                    .aspectRatio(1, contentMode: .fit)
+                    .cornerRadius(12)
             }
         }
     }

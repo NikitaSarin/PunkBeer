@@ -23,16 +23,16 @@ struct BeerRow: View {
                 fetcher: fetcher
             )
             .frame(width: Specs.edge, height: Specs.edge)
-            .cornerRadius(12)
             VStack {
-                HStack {
+                HStack(spacing: 12) {
                     Text(beer.name)
-                        .font(.system(size: 16, weight: .bold))
+                        .font(.system(size: 18, weight: .bold))
                         .lineLimit(1)
                     Spacer()
                 }
                 HStack {
                     Text(beer.description)
+                        .foregroundColor(.secondary)
                         .lineLimit(3)
                     Spacer()
                 }
